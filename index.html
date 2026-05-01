@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Party de Loraine 🎉</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Satisfy&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f5ede0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    padding: 30px 16px;
+  }
+
+  .card {
+    width: 480px;
+    background: #fff8f0;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(120,60,0,0.18), 0 4px 16px rgba(120,60,0,0.08);
+    animation: pop .8s cubic-bezier(.34,1.56,.64,1) both;
+  }
+
+  @keyframes pop {
+    from { opacity: 0; transform: scale(.88) translateY(30px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  /* ── TOP PHOTO BAND ── */
+  .top-band {
+    background: #c13b2a;
+    padding: 38px 36px 30px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* pasta/confetti dots */
+  .top-band::before {
+    content: '🍕 🍝 🥂 🎂 🍷 ✨ 🎉';
+    position: absolute;
+    top: 10px; left: 0; right: 0;
+    font-size: 13px;
+    letter-spacing: 6px;
+    opacity: 0.25;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .top-band::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 32px;
+    background: #fff8f0;
+    border-radius: 60% 60% 0 0 / 100% 100% 0 0;
+  }
+
+  .its-a-party {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ffcbb0;
+    margin-bottom: 12px;
+    animation: pop .8s .2s both;
+  }
+
+  .name-big {
+    font-family: 'Satisfy', cursive;
+    font-size: 62px;
+    color: #fff;
+    line-height: 1;
+    text-shadow: 0 3px 14px rgba(0,0,0,0.25);
+    animation: pop .8s .3s both;
+  }
+  .name-big span {
+    display: block;
+    font-size: 36px;
+    color: #ffd4b2;
+    margin-top: 2px;
+  }
+
+  .emoji-row {
+    margin-top: 16px;
+    font-size: 24px;
+    letter-spacing: 6px;
+    animation: pop .8s .4s both;
+  }
+
+  /* ── BODY ── */
+  .body {
+    padding: 10px 36px 28px;
+  }
+
+  .headline {
+    text-align: center;
+    margin: 8px 0 22px;
+    animation: pop .8s .5s both;
+  }
+  .headline h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #2a1200;
+    line-height: 1.2;
+  }
+  .headline h2 em {
+    font-style: italic;
+    color: #c13b2a;
+  }
+  .headline p {
+    margin-top: 8px;
+    font-size: 14.5px;
+    color: #7a4a2a;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ── PILL BADGES ── */
+  .pills {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 0 24px;
+    animation: pop .8s .6s both;
+  }
+  .pill {
+    background: #fff0e6;
+    border: 1.5px solid #f5c9a8;
+    border-radius: 999px;
+    padding: 8px 18px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13.5px;
+    color: #3d1800;
+    font-weight: 500;
+  }
+  .pill .icon { font-size: 16px; }
+  .pill .val  { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; }
+
+  /* ── VENUE CARD ── */
+  .venue {
+    background: #2a1200;
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+    animation: pop .8s .7s both;
+  }
+  .venue-icon {
+    font-size: 36px;
+    flex-shrink: 0;
+  }
+  .venue-info {}
+  .venue-tag {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #e0a060;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .venue-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: #fff8f0;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .venue-addr {
+    font-size: 12px;
+    color: #c8906a;
+    font-weight: 300;
+  }
+
+  /* ── RSVP STRIP ── */
+  .rsvp {
+    background: linear-gradient(135deg, #c13b2a, #e05a20);
+    border-radius: 14px;
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: pop .8s .8s both;
+  }
+  .rsvp-text {
+    color: #fff;
+  }
+  .rsvp-text .small {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: .75;
+    margin-bottom: 3px;
+  }
+  .rsvp-text .big {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+  }
+  .rsvp-emoji {
+    font-size: 32px;
+    animation: wave 1.8s ease-in-out infinite;
+  }
+  @keyframes wave {
+    0%,100% { transform: rotate(0deg); }
+    25%      { transform: rotate(-12deg); }
+    75%      { transform: rotate(12deg); }
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 18px 36px 24px;
+    border-top: 1px dashed #f0d8c0;
+  }
+  .footer p {
+    font-size: 13px;
+    color: #c0906a;
+    font-style: italic;
+  }
+  .footer .big-note {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: #2a1200;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- Top band -->
+  <div class="top-band">
+    <p class="its-a-party">¡Es su cumpleaños! &nbsp;🎂</p>
+    <div class="name-big">
+      Loraine
+      <span>Bruges</span>
+    </div>
+    <div class="emoji-row">🥂 🎉 🍕</div>
+  </div>
+
+  <!-- Body -->
+  <div class="body">
+
+    <div class="headline">
+      <h2>¡Ven a celebrarla con <em>todo</em>!</h2>
+      <p>Una noche italiana que no te puedes perder.<br>Buena comida, buena gente, mejor ambiente. 🇮🇹</p>
+    </div>
+
+    <!-- Pills -->
+    <div class="pills">
+      <div class="pill">
+        <span class="icon">📅</span>
+        <span class="val">Jueves 8 de mayo</span>
+      </div>
+      <div class="pill">
+        <span class="icon">🕢</span>
+        <span class="val">7:30 PM</span>
+      </div>
+    </div>
+
+    <!-- Venue -->
+    <div class="venue">
+      <div class="venue-icon">🍝</div>
+      <div class="venue-info">
+        <div class="venue-tag">El lugar</div>
+        <div class="venue-name">Mia Italy</div>
+        <div class="venue-addr">Cra 57 No. 75-160 · Barranquilla</div>
+      </div>
+    </div>
+
+    <!-- RSVP -->
+    <div class="rsvp">
+      <div class="rsvp-text">
+        <div class="small">No faltes, avisa</div>
+        <div class="big">¡Confirma tu asistencia!</div>
+      </div>
+      <div class="rsvp-emoji">👋</div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Un rincón de Italia en Barranquilla ✨</p>
+    <div class="big-note">¡Te esperamos con mucho amor!</div>
+  </div>
+
+</div>
+
+</body>
+</html>
